@@ -1,2 +1,2 @@
 # producer-consumer-problem
-producer consumer problem in   using processes and threads in python
+producer consumer problem using processes and threads in python
