@@ -18,7 +18,7 @@ qu=Queue(maxsize=5)
 # lock=Lock()
 
 def read_thread(q):
-    with open("dumb.txt","r") as  filep:
+    with open("test.txt","r") as  filep:
         for i in filep:
             try:
                 # sleep(5)
