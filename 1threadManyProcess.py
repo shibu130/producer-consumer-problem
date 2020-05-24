@@ -3,13 +3,13 @@ from threading import Thread
 
 from time import perf_counter,sleep
 def read_thread(q):
-    with open("dumb.txt","r") as  filep:
+    with open("test.txt","r") as  filep:
         for i in filep:
                 # sleep(5)
                 print("pushing {} item into queue".format(i.strip()))
                 q.put(i.strip())
         else:
-            
+            #to stop the process when the filepointer reaches end of file
             q.put(None)
             # sleep(1)
             q.put(None)
@@ -40,6 +40,7 @@ if __name__ == "__main__":
  
     
     start=perf_counter()
+    
     C1=multiprocessing.Process(name='c1',target=consume,args=(qu,))
     C1.start()
 
