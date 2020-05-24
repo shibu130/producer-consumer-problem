@@ -33,18 +33,7 @@ def read_thread(q):
             pass
 
 
-def balance(address):
-    
-    api="https://chain.api.btc.com/v3/address/"
-    bal=requests.get(api+address, headers={"content-type":"application/json","Cookie":"acw_tc=0bc1a14415876248535402530e2d1b397e6e522345b9cad7922f886f7198eb"
-    ,"Cache-Control":"no-cache","User-Agent":"User-Agent","Accept":"*/*","Accept-Encoding":"gzip, deflate, br","Connection":"keep-alive"}).json()['data']['balance']
-    if(bal>0 or float(bal)>0):
-        # print(True)
-        print(address+" has "+str(bal))
-        
-        # exit(0)
-    else:
-        print(address+" has no balance")
+
 
 
 
