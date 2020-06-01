@@ -3,7 +3,7 @@ from threading import Thread
 
 from time import perf_counter,sleep
 def read_thread(q):
-    with open("test.txt","r") as  filep:
+    with open("test.txt","r") as  filep: #input file
         for i in filep:
                 # sleep(5)
                 print("pushing {} item into queue".format(i.strip()))
@@ -34,7 +34,7 @@ def consume(q):
 
 
 if __name__ == "__main__":
-    qu=multiprocessing.Queue(maxsize=5)
+    qu=multiprocessing.Queue(maxsize=5)  #Queue
     P=Thread(name='p',target=read_thread,args=(qu,))
     P.start()
  
@@ -58,5 +58,5 @@ if __name__ == "__main__":
 
     end=perf_counter()
 
-    print(end-start)
+    print(end-start)  #total time taken
     
